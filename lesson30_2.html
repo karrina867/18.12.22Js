@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vw;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+        .block{
+            width:10vw ;
+            background-color: rgb(219, 246, 128);
+            border: 1px solid royalblue;
+            height: 10vw;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="block"></div>
+    <script>
+        let block = document.querySelector('.block');
+        let isDrag = false;
+        let offsetX;
+        let offsetY;
+        block.addEventListener('mousedown', function(e){
+            isDrag = true;
+            offsetX = e.pageX - parseInt(getComputedStyle(block).left);
+            offsetY = e.pageY - parseInt(getComputedStyle(block).top);
+        })
+        document.addEventListener('mouseup', function(){
+            isDrag = false;
+        })
+        block.addEventListener('mousemove', function(e){
+            if(isDrag){
+                block.style.left = `calc(${e.pageX}px - ${offsetX}px)`;
+                block.style.top = `calc(${e.pageY}px - ${offsetY}px)`;
+            }
+        })
+        
+    </script>
+</body>
+</html>

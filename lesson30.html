@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        div{
+            width: 500px;
+            height: 200px;
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        let el = document.querySelector('div');
+        console.log(getComputedStyle(el).width);
+        //
+        console.log('ширина элемента:'+ el.offsetWidth);
+        console.log(typeof el.offsetWidth);
+        console.log('высота элемента:'+ el.offsetHeight);
+
+        console.log('ширина элемента без рамки:'+ el.clientWidth);
+        console.log('высота элемента без рамки:'+ el.clientHeight);
+
+        console.log('ширина рамки:'+ el.clientLeft);
+        console.log('ширина рамки:'+ el.clientTop);
+        
+        console.log('размер страницы по высоте:'+ document.body.scrollHeight);
+        console.log('размер страницы по ширине:'+ document.body.scrollWidth);
+
+        console.log(el.getBoundingClientRect().x +'координаты объекта верхнего левой точки(x)');
+        console.log(el.getBoundingClientRect().y);
+
+        //
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
